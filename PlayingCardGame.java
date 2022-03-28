@@ -21,7 +21,7 @@ _______ _________ _______  _                   _______  _______  _______ _______
 import java.io.*;
 import java.util.*;
 
-public class PlayingCardClient //remember to change this
+public class PlayingCardGame //remember to change this
 {
    public static void print(String line){ // condenses System.out.print into print(line)
       System.out.print(line);
@@ -186,6 +186,14 @@ public class PlayingCardClient //remember to change this
       }
    }
 
+   public static int handValue(PlayingCard card1, PlayingCard card2){
+      return card1.getValue() + card2.getValue();
+   }
+
+   public static void printHand(String player, PlayingCard card1, PlayingCard card2){
+      System.out.println(player + "'s cards:\n" + card1 + "\n" + card2 +"\n");
+   }
+
    
     public static void main(String[] args) throws FileNotFoundException //main function
     {
@@ -193,25 +201,36 @@ public class PlayingCardClient //remember to change this
       
       String[] ranks = {"Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"};
       String[] suits = {"Clubs", "Diamonds", "Hearts", "Spades"};
+      int[] value = {11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10};
       
       ArrayList<PlayingCard> deck = new ArrayList<>();//creates deck
       for (String i: suits){
-         for (String j: ranks){
-            PlayingCard p = new PlayingCard(j, i);
+         for (int j = 0; j < ranks.length; j++){
+            PlayingCard p = new PlayingCard(ranks[j], i, value[j]);
             deck.add(p);
          }
       }
       
-      System.out.println("Unshuffled Deck: ");//prints cards on new line
-      for (PlayingCard i: deck){
-         System.out.println(i);
-      }
-      
       shuffle(deck);//shuffles deck
       
-      System.out.println("Shuffled Deck: ");//prints cards on new line
-      for (PlayingCard i: deck){
-         System.out.println(i);
+     
+//deals cards
+      PlayingCard p1 = deck.get(0);
+      PlayingCard p2 = deck.get(1);
+      PlayingCard d1 = deck.get(2);
+      PlayingCard d2 = deck.get(3);
+
+      printHand("Player", p1, p2);//outputs hand
+      //System.out.println(handValue(p1,p2));
+      printHand("Dealer", d1, d2);
+      //System.out.println(handValue(d1,d2));
+
+      if (handValue(p1, p2)>handValue(d1,d2)){//checks winner
+         System.out.println("Player wins!");
+      } else if (handValue(p1, p2)<handValue(d1,d2)){
+         System.out.println("Player loses!");
+      } else {
+         System.out.println("Player ties!");
       }
       
       
