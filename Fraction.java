@@ -1,6 +1,6 @@
 // Rizky Pratama
 // Period 4
-// 3/28/22
+// 3/30/22
 
 public class Fraction //remember to change this and the constructor 
 {
@@ -26,12 +26,52 @@ public class Fraction //remember to change this and the constructor
    }
 
    public void addFraction(Fraction that){//adds fract
-      this.numerator = this.getNumerator() * that.getDenominator() + that.getNumerator() * this.getDenominator();
-      this.denominator = this.getDenominator() * that.getDenominator();
+      this.numerator = this.numerator * that.getDenominator() + that.getNumerator() * this.denominator;
+      this.denominator = this.denominator * that.getDenominator();
+      simplifyFraction();
+      fixSigns();
    } 
 
    public void multiplyFraction(Fraction that){//multiplies fract
-      this.numerator = this.getNumerator()*that.getNumerator();
-      this.denominator = this.getDenominator() * that.getDenominator();
+      this.numerator = this.numerator*that.getNumerator();
+      this.denominator = this.denominator * that.getDenominator();
+      simplifyFraction();
+      fixSigns();
    }  
+
+   public void subtractFraction(Fraction that){//subtract fract
+      this.numerator = this.numerator * that.getDenominator() - that.getNumerator() * this.denominator;
+      this.denominator = this.denominator * that.getDenominator();
+      simplifyFraction();
+      fixSigns();
+   } 
+
+   private void simplifyFraction(){//simplies the fraction
+      int A;
+      int B;
+      if (numerator > denominator){
+         A = numerator;
+         B = denominator;
+      } else {
+         A = denominator;
+         B = numerator;
+      }
+      int R = A % B;
+      while (R!=0){
+         A = B;
+         B = R;
+         R = A % B;
+      }
+      numerator = numerator/B;
+      denominator = denominator/B;
+
+   }
+
+   private void fixSigns(){//fixes fraction signs
+      if (denominator < 0){
+         denominator *= -1;
+         numerator *= -1;
+      }
+   }
+
 }
