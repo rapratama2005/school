@@ -182,7 +182,7 @@ public class Template //remember to change this
     {
       Scanner input = new Scanner(System.in);//imports scanner
       
-      ArrayList<Integer> list = new ArrayList<Integer>;
+      ArrayList<Integer> list = new ArrayList<>();
       insertionSort(list);
       System.out.println(list);
       System.out.println(binarySearch(list, 3));
@@ -193,3 +193,4 @@ public class Template //remember to change this
 
     }
 }
+//I love using industry standard tools 
