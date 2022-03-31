@@ -17,4 +17,8 @@ public class TemplateObj //remember to change this and the constructor
       x = 0;
       y = 0;
    }
+
+   public String toString(){
+      return " ";
+   }
 }
