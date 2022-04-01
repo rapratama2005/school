@@ -177,8 +177,8 @@ public class Template //remember to change this
       return -1;
    }
 
-   
-    public static void main(String[] args) throws FileNotFoundException //main function
+   //main function
+    public static void main(String[] args) throws FileNotFoundException
     {
       Scanner input = new Scanner(System.in);//imports scanner
       
