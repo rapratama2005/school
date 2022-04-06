@@ -1,6 +1,6 @@
 // Rizky Pratama
 // Period 4
-// 4/5/22
+// 4/6/22
 
 public class Student extends Person //remember to change this and the constructor 
 {
@@ -20,5 +20,9 @@ public class Student extends Person //remember to change this and the constructo
 
    public double getGpa(){
       return gpa;
+   }
+
+   public String toString(){
+      return super.toString() + ", is in grade " + grade + " and has gpa " + gpa;
    }
 }

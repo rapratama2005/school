@@ -1,6 +1,6 @@
 // Rizky Pratama
 // Period 4
-// 4/5/22
+// 4/6/22
 
 public class Worker extends Person //remember to change this and the constructor 
 {
@@ -20,5 +20,9 @@ public class Worker extends Person //remember to change this and the constructor
 
    public int getSalary(){
       return salary;
+   }
+
+   public String toString(){
+      return super.toString() + ", is a " + title + " and makes $" + salary;
    }
 }
