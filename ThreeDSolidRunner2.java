@@ -1,6 +1,6 @@
 // Rizky Pratama
 // Period 4
-// Date
+// 4/12/22
 
 /*
 _______ _________ _______  _                   _______  _______  _______ _________ _______  _______  _______ 
@@ -21,7 +21,7 @@ _______ _________ _______  _                   _______  _______  _______ _______
 import java.io.*;
 import java.util.*;
 
-public class Template //remember to change this
+public class ThreeDSolidRunner2 //remember to change this
 {
    public static void print(String line){ // condenses System.out.print into print(line)
       System.out.print(line);
@@ -177,26 +177,29 @@ public class Template //remember to change this
       return -1;
    }
 
-   public static int binarySearchRecursion (ArrayList<Integer> list, int target, int startIndex, int endIndex){//binary search - searches from middle
-      
-      int midIndex = (startIndex + endIndex)/2;
-      if (target < list.get(midIndex)){
-         return(binarySearchRecursion(list, target, startIndex, midIndex -1));
-      } else if (target > list.get(midIndex)) {
-         return(binarySearchRecursion(list, target, midIndex+1, endIndex));
-      } else if (target == list.get(midIndex)){
-         return midIndex;
-      } else { 
-         return -1;
-      }
-   }
-
    //main function
     public static void main(String[] args) throws FileNotFoundException
     {
       Scanner input = new Scanner(System.in);//imports scanner
-      
-     
+      ArrayList<ThreeDSolid> threeDsolids = new ArrayList<>();
+      for (int i = 1; i <= 8; i++){
+         int rng = randomInt(0, 2);
+         int v1 = randomInt(1, 10);
+         int v2 = randomInt(1, 10);
+         int v3 = randomInt(1, 10);
+         if (rng==0){
+            threeDsolids.add(new Pyramid(v1, v2, v3));//pyramid
+         } else if (rng==1) {
+            threeDsolids.add(new Cube(v1));//cubes
+         } else {
+            threeDsolids.add(new RectangularCuboid(v1, v2, v3));//rectangular cuboid
+         }
+      }
+      for (ThreeDSolid i : threeDsolids){//outputs
+         System.out.println(i);
+         System.out.println("volume: " + i.volume());
+         System.out.println();
+      }
       
       
          

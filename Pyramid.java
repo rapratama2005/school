@@ -1,6 +1,6 @@
 // Rizky Pratama
 // Period 4
-// 4/11/22
+// 4/12/22
 
 public class Pyramid extends ThreeDSolid
 {
@@ -19,6 +19,6 @@ public class Pyramid extends ThreeDSolid
    }
 
    public String toString(){//toString
-      return "pyramid with length: " + length + " width: " + width + " height: " + height;
+      return super.toString() + " length: " + length + " width: " + width + " height: " + height;
    }
 }
