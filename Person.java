@@ -1,6 +1,6 @@
 // Rizky Pratama
 // Period 4
-// 4/6/22
+// 4/13/22
 
 public class Person //remember to change this and the constructor 
 {
@@ -21,7 +21,15 @@ public class Person //remember to change this and the constructor
       return age;
    }
 
-   public String toString(){
+   public String toString(){//toString
       return name + " is " + age + " years old";
+   }
+
+   public boolean equals(Person that){//compares
+      if(this.getName().equals(that.getName()) && this.getAge()==that.getAge()){
+         return true;
+      } else {
+         return false;
+      }
    }
 }

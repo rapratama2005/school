@@ -1,27 +1,35 @@
 // Rizky Pratama
 // Period 4
-// 4/1/22
+// 4/13/22
 
 public class Point //remember to change this and the constructor 
 {
-   private double x;
-   private double y;
+   private int x;
+   private int y;
    //No main method
    
-   public Point(double x, double y){ //change this as well
-      this.x = x;
-      this.y = y;
+   public Point(){ //change this as well
+      this.x = (int) ((Math.random()*2)+1);
+      this.y = (int) ((Math.random()*2)+1);
    }
 
-   public double getX(){
+   public int getX(){//gets x
       return x;
    }
 
-   public double getY(){
+   public int getY(){//gets y
       return y;
    }
 
-   public double distanceTo(Point that){//distance formulat
-      return Math.sqrt(Math.pow(that.getX() - this.x, 2) + Math.pow(that.getY() - this.y, 2));
+   public String toString(){//toString
+      return "("+x+","+y+")";
+   }
+
+   public boolean equals(Point that){//compares
+      if(this.getX()==that.getX() && this.getY()==that.getY()){
+         return true;
+      } else {
+         return false;
+      }
    }
 }
