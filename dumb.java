@@ -191,7 +191,7 @@ public class dumb //remember to change this
       }
    }
 
-   public double calculate(double x){
+   public static double calculate(double x){
       return x + 1.5;
    }
   
