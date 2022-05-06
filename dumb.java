@@ -200,8 +200,9 @@ public class dumb //remember to change this
     {
       Scanner input = new Scanner(System.in);//imports scanner
       
-      Double d1 = new Double(7.5);
-      System.out.println(calculate(d1));
+      String i = new String("ab");
+      String x = new String("ab");
+      System.out.println(i!=x);
       
       
          
