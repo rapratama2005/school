@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PalinRunner",
+            "request": "launch",
+            "mainClass": "PalinRunner",
+            "projectName": "school_bf13e0ea"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringSearchRunner",
+            "request": "launch",
+            "mainClass": "StringSearchRunner",
+            "projectName": "school_bf13e0ea"
+        },
+        {
+            "type": "java",
             "name": "Launch Stars",
             "request": "launch",
             "mainClass": "Stars",
