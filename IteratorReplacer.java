@@ -31,10 +31,7 @@ public class IteratorReplacer
 	private String toRemove, replaceWith;
 
 	public IteratorReplacer(String line, String rem, String rep){
-		String[] temp = line.split(" ");
-		list = new ArrayList<String>(Arrays.asList(temp));
-		toRemove = rem;
-		replaceWith = rep;
+		setEmAll(line, rem, rep);
 	}
 
 	public void setEmAll(String line, String rem, String rep){
@@ -56,7 +53,6 @@ public class IteratorReplacer
 	}
 
 	public String toString(){
-		replace();
 		return list.toString()+"\n\n";
 	}
 }

@@ -50,7 +50,6 @@ public class IteratorRemover
 
 	public String toString()
 	{
-		remove();
 		return list.toString();
 	}
 }
