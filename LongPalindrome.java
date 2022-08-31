@@ -1,9 +1,19 @@
 //� A+ Computer Science  -  www.apluscompsci.com
-//Name - 
-//Date -
-//Class -
-//Lab  -
+// Rizky Pratama
+// Period 2
+// 8/31/22
 
+/*
+_______ _________ _______  _                   _______  _______  _______ _________ _______  _______  _______ 
+(  ____ )\__   __// ___   )| \    /\|\     /|  (  ____ )(  ____ )(  ___  )\__   __/(  ___  )(       )(  ___  )
+| (    )|   ) (   \/   )  ||  \  / /( \   / )  | (    )|| (    )|| (   ) |   ) (   | (   ) || () () || (   ) |
+| (____)|   | |       /   )|  (_/ /  \ (_) /   | (____)|| (____)|| (___) |   | |   | (___) || || || || (___) |
+|     __)   | |      /   / |   _ (    \   /    |  _____)|     __)|  ___  |   | |   |  ___  || |(_)| ||  ___  |
+| (\ (      | |     /   /  |  ( \ \    ) (     | (      | (\ (   | (   ) |   | |   | (   ) || |   | || (   ) |
+| ) \ \_____) (___ /   (_/\|  /  \ \   | |     | )      | ) \ \__| )   ( |   | |   | )   ( || )   ( || )   ( |
+|/   \__/\_______/(_______/|_/    \/   \_/     |/       |/   \__/|/     \|   )_(   |/     \||/     \||/     \|
+
+*/
 import static java.lang.System.*;
 import java.util.ArrayList;
 
@@ -22,7 +32,6 @@ public class LongPalindrome
 				Palin test = new Palin(word.substring(x, y));
 				if(test.isPalin()){
 					palinList.add(insertLocation(palinList, test), test);
-					System.out.println(palinList);
 				}
 			}
 		}
@@ -38,9 +47,10 @@ public class LongPalindrome
 		int x = 0;
 		if (list.size()==0){return 0;}
 		for (int i = 0; i < list.size(); i++){
-			if(pal.toString().compareTo(list.get(i).toString())>0){
-				x = i;
+			if(pal.toString().compareTo(list.get(i).toString())<0) {
+				return x;
 			}
+			x++;
 		}
 		return x;
 	}
