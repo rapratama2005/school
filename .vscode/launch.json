@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch LongPalindromeRunner",
+            "request": "launch",
+            "mainClass": "LongPalindromeRunner",
+            "projectName": "school_bf13e0ea"
+        },
+        {
+            "type": "java",
             "name": "Launch PalinRunner",
             "request": "launch",
             "mainClass": "PalinRunner",
