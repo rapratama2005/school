@@ -34,5 +34,19 @@ public class WordSearchRunner
     	  	     System.out.println( s + " was not found in the matrix.");
     	  	  }
     	  }
+		  WordSearch2 ms2 = new WordSearch2(8,"APPLEXYPXLHJKEEDEGGLLXXCGFPDGOGNMYNTAHUUPUQDGBTSBTHIGHMSILKXLTHIS");
+    	  String[] words2 = "APPLE AXE APEX CAT HEX EGG HAT COMPUTER GUM THIS TUG THIGH".split(" ");
+    	  System.out.println( ms );
+    	  for( String s : words )
+    	  {
+    	  	  if( ms.isFound( s) )
+    	  	  {
+    	  	  	  System.out.println( s + " was found in the matrix.");
+    	  	  }
+    	  	  else
+    	  	  {
+    	  	     System.out.println( s + " was not found in the matrix.");
+    	  	  }
+    	  }
     }
 }
