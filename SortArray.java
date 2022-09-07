@@ -200,5 +200,9 @@ public class SortArray //remember to change this
       insertionSort(rng);
       println(" ");
       System.out.println(rng);
+
+      int[] toSort = {31, 53, 41, 32, 23 ,45, 67, 87, 31, 90};
+      Sorts s = new Sorts();
+      printArray(s.mergeSort(toSort));
     }
 }

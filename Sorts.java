@@ -65,50 +65,61 @@ public class Sorts {
 	}
 	
 	public int[] mergeSort (int[] arr) {
-		printArr(arr);
+		//printArr(arr);
 		if (arr.length != 1) {
-			double midpoint = arr.length/2;
-			int[] arr2 = new int[(int) Math.ceil(midpoint)];
-			int[] arr3 = new int[(int) Math.ceil(midpoint)];
-			for (int i = 0; i < arr2.length; i++) {
+			int midpoint = arr.length/2;
+			int[] arr2 = new int[midpoint];
+			int[] arr3 = new int[arr.length-midpoint];
+			int i = 0;
+			while (i < midpoint){
 				arr2[i] = arr[i];
-			}
-			for (int i = 0; i < arr3.length; i++) {
-				arr3[i] = arr[(int)Math.ceil(midpoint)+i];
+				i++;
+			} while (i < arr.length){
+				arr3[i-midpoint] = arr[i];
+				i++;
 			}
 			arr2 = mergeSort(arr2);
-			printArr(arr2);
+			//printArr(arr2);
 			arr3 = mergeSort(arr3);
-			printArr(arr3);
+			//printArr(arr3);
 			return merge(arr2, arr3);
 		}
 		return arr;
 	}
 	
 	public int[] merge (int[] l, int[] r) {
-		int li = 0; int ri = 0; 
+		int li = 0; 
+		int ri = 0; 
 		int[] arr = new int[l.length + r.length];
+		//System.out.println("length " + arr.length);
 		int i = 0;
 		while (li < l.length && ri < r.length) {
 			if (l[li] < r[ri]) {
 				arr[i] = l[li];
+				//System.out.println(l[li]);
 				i++;
 				li++;
 			} else {
 				arr[i] = r[ri];
+				//System.out.println(r[ri]);
 				ri++;
 				i++;
 			}
 		}
 		
+		
 		while (li < l.length) {
 			arr[i] = l[li];
+			//System.out.println("left leftover: " + l[li]);
 			li++;
+			i++;
 		}
 		
-		while (ri < l.length) {
+		while (ri < r.length) {
 			arr[i] = r[ri];
+			//System.out.println("right leftover: " + r[ri]);
 			ri++;
+			i++;
 		}
 		return arr;
 	}
