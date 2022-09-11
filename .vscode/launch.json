@@ -9,6 +9,13 @@
             "name": "Launch SortArray",
             "request": "launch",
             "mainClass": "SortArray",
+            "projectName": "school_bf13e0ea"
+        },
+        {
+            "type": "java",
+            "name": "Launch SortArray",
+            "request": "launch",
+            "mainClass": "SortArray",
             "projectName": "school_285157ff"
         },
         {
