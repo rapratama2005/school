@@ -82,7 +82,7 @@ public class Sorts {
 			//printArr(arr2);
 			arr3 = mergeSort(arr3);
 			//printArr(arr3);
-			return merge(arr2, arr3);
+			arr = merge(arr2, arr3);
 		}
 		return arr;
 	}
