@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch BigO",
+            "request": "launch",
+            "mainClass": "BigO",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
             "name": "Launch SortArray",
             "request": "launch",
             "mainClass": "SortArray",
