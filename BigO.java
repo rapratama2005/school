@@ -3,8 +3,8 @@ public class BigO {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int upToIndex = 200;
-		int repeat = 1000;
+		int upToIndex = 100;
+		int repeat = 10000;
 		int randomMin = 0;
 		int randomMax = 1000;
 		Sorts s = new Sorts();
@@ -25,7 +25,7 @@ public class BigO {
 			}
 			bestCase[i-1] = avgTime(allTimes);
 		}
-		System.out.println(ArrToString2(bestCase));
+		//System.out.println(ArrToString2(bestCase));
 		
 		//Worst Case
 		long[] worstCase = new long[upToIndex];
@@ -43,7 +43,7 @@ public class BigO {
 			}
 			worstCase[i-1] = avgTime(allTimes);
 		}
-		System.out.println(ArrToString2(worstCase));
+		//System.out.println(ArrToString2(worstCase));
 		
 		//Random Case
 		long[] randomCase = new long[upToIndex];
@@ -61,7 +61,7 @@ public class BigO {
 			}
 			randomCase[i-1] = avgTime(allTimes);
 		}
-		System.out.println(ArrToString2(randomCase));
+		//System.out.println(ArrToString2(randomCase));
 		
 		//Format Stats
 		System.out.printf("Index (%5d) | Best  | Worst | Random (%d to %5d)\n", upToIndex, randomMin, randomMax);
