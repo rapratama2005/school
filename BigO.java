@@ -3,8 +3,8 @@ public class BigO {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int upToIndex = 1000;
-		int repeat = 10;
+		int upToIndex = 100;
+		int repeat = 100;
 		int randomMin = 0;
 		int randomMax = 1000;
 		Sorts s = new Sorts();
