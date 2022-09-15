@@ -3,7 +3,7 @@ public class BigO {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int upToIndex = 10;
+		int upToIndex = 1000;
 		int repeat = 10;
 		int randomMin = 0;
 		int randomMax = 1000;
