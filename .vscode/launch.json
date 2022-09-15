@@ -9,6 +9,13 @@
             "name": "Launch BigO",
             "request": "launch",
             "mainClass": "BigO",
+            "projectName": "school_7d3bd774"
+        },
+        {
+            "type": "java",
+            "name": "Launch BigO",
+            "request": "launch",
+            "mainClass": "BigO",
             "projectName": "school_bf13e0ea"
         },
         {

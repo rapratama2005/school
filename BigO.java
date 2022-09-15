@@ -69,17 +69,17 @@ public class BigO {
 			System.out.printf("%13d | %5d | %5d | %5d\n", i, bestCase[i], worstCase[i], randomCase[i]);
 		}
 		
-		System.out.println(checkConstant(bestCase));
-		System.out.println(checkConstant(worstCase));
-		System.out.println(checkConstant(randomCase));
+		// System.out.println(checkConstant(bestCase));
+		// System.out.println(checkConstant(worstCase));
+		// System.out.println(checkConstant(randomCase));
 
-		System.out.println(checkLinear(bestCase));
-		System.out.println(checkLinear(worstCase));
-		System.out.println(checkLinear(randomCase));
+		// System.out.println(checkLinear(bestCase));
+		// System.out.println(checkLinear(worstCase));
+		// System.out.println(checkLinear(randomCase));
 
-		System.out.println(checkQuadratic(bestCase));
-		System.out.println(checkQuadratic(worstCase));
-		System.out.println(checkQuadratic(randomCase));
+		// System.out.println(checkQuadratic(bestCase));
+		// System.out.println(checkQuadratic(worstCase));
+		// System.out.println(checkQuadratic(randomCase));
 		
 		//equations
 		
@@ -116,105 +116,105 @@ public class BigO {
 	public static int randomInt(int min, int max){//picks random int
 	      return (int) (Math.random()*(max-min+1))+min;
 	  }
-	
-	public static long checkConstant(long[] arr) {
-		long avgVal = 0;
-		for (int i = 0; i < arr.length; i++) {
-			avgVal += arr[i];
-		}
-		avgVal = avgVal/arr.length;
-		long avgDev = 0;
-		for (int i = 0; i < arr.length; i++) {
-			avgDev += Math.abs(avgVal-arr[i]);
-		}
 
-		return avgDev/arr.length;
-	}
+// 	public static long checkConstant(long[] arr) {
+// 		long avgVal = 0;
+// 		for (int i = 0; i < arr.length; i++) {
+// 			avgVal += arr[i];
+// 		}
+// 		avgVal = avgVal/arr.length;
+// 		long avgDev = 0;
+// 		for (int i = 0; i < arr.length; i++) {
+// 			avgDev += Math.abs(avgVal-arr[i]);
+// 		}
 
-	public static double checkLinear(long[] arr){
-		//find avg rate of change
-		long avgROT = 0;
-		long avgX = 0;
-		long avgY = arr[0];
-		for (int i = 1; i < arr.length; i++) {
-			avgROT = (avgROT + (arr[i] - arr[i-1]))/i;
-			avgX += i;
-			avgY += arr[i];
-		}
-		//find y intercept
-		avgX = avgX/arr.length;
-		avgY = avgY/arr.length;
-		long b = avgY - (avgX*avgROT);
-		System.out.println("Y = " + avgROT + "x + " + b);
-		//find avg deviation
-		long avgDev = 0;
-		for (int i = 0; i < arr.length; i++) {
-			long projected = (avgROT*arr[i])+b;
-			avgDev = Math.abs((arr[i]-projected)/projected);
-			//avgDev = (avgDev + Math.abs(projected-arr[i]))/(i+1);
-		}
-		double r2 = (double) avgDev / arr.length;
+// 		return avgDev/arr.length;
+// 	}
 
-		return r2*r2;
-	}
+// 	public static double checkLinear(long[] arr){
+// 		//find avg rate of change
+// 		long avgROT = 0;
+// 		long avgX = 0;
+// 		long avgY = arr[0];
+// 		for (int i = 1; i < arr.length; i++) {
+// 			avgROT = (avgROT + (arr[i] - arr[i-1]))/i;
+// 			avgX += i;
+// 			avgY += arr[i];
+// 		}
+// 		//find y intercept
+// 		avgX = avgX/arr.length;
+// 		avgY = avgY/arr.length;
+// 		long b = avgY - (avgX*avgROT);
+// 		System.out.println("Y = " + avgROT + "x + " + b);
+// 		//find avg deviation
+// 		long avgDev = 0;
+// 		for (int i = 0; i < arr.length; i++) {
+// 			long projected = (avgROT*arr[i])+b;
+// 			avgDev = Math.abs((arr[i]-projected)/projected);
+// 			//avgDev = (avgDev + Math.abs(projected-arr[i]))/(i+1);
+// 		}
+// 		double r2 = (double) avgDev / arr.length;
 
-	public static long checkQuadratic(long[] arr){
-		//find sums and it's powers
-		long sumX = 0;
-		for (int i = 1; i <= arr.length; i++){
-			sumX += i;
-		}
-		System.out.println(sumX);
-		long sumY = 0;
-		for (int i = 1; i <= arr.length; i++){
-			sumY += arr[i-1];
-		}
-		System.out.println(sumY);
-		long sumX2 = 0;
-		for (int i = 1; i <= arr.length; i++){
-			sumX2 += Math.pow(i,2);
-		}
-		System.out.println(sumX2);
-		long sumX3 = 0;
-		for (int i = 1; i <= arr.length; i++){
-			sumX3 += Math.pow(i,3);
-		}
-		System.out.println(sumX3);
-		long sumX4 = 0;
-		for (int i = 1; i <= arr.length; i++){
-			sumX4 += Math.pow(i,4);
-		}
-		System.out.println(sumX4);
-		long sumXY = 0;
-		for (int i = 1; i < arr.length; i++){
-			sumXY += i*arr[i-1];
-		}
-		System.out.println(sumXY);
-		long sumX2Y = 0;
-		for (int i = 1; i < arr.length; i++){
-			sumX2Y += i*i*arr[i-1];
-		}
-		System.out.println(sumX2Y);
-//		Σ x x = [ Σ x 2 ] – [ ( Σ x )2 / n ] 
-		long sumXX = sumX2 - ((sumX*2)/arr.length);
-		//Σ x y = [ Σ x y ] – [ ( Σ x * Σ y ) / n ] 
-		sumXY = sumXY - ((sumX*sumY)/arr.length);
-// 		Σ x x2 = [ Σ x 3 ] – [ ( Σ x 2 * Σ x ) / n ] 
-		long sumXX2 = sumX3 - ((sumX2*sumX)/arr.length);
-// 		Σ x2 y = [ Σ x 2 y] – [ ( Σ x 2 * Σ y ) / n ] 
-		sumX2Y = sumX2Y - ((sumX2*sumY)/arr.length);
-// 		Σ x2 x2 = [ Σ x 4 ] – [ ( Σ x 2 )2 / n ]
-		long sumX2X2 = sumX4 - ((sumX2*2)/arr.length);
+// 		return r2*r2;
+// 	}
 
-		//write equation
-		//a = { [ Σ x2 y * Σ xx ] – [Σ xy * Σ xx2 ] } / { [ Σ xx * Σ x2x 2] – [Σ xx2 ]2 }
-		long a = ((sumX2Y*sumXX) - (sumXY*sumXX2)) / ((sumXX*sumX2X2)-(sumXX2)*2);
-// 		b = { [ Σ xy * Σ x2x2 ] – [Σ x2y * Σ xx2 ] } / { [ Σ xx * Σ x2x 2] – [Σ xx2 ]2 }
-		long b =  ((sumXY*sumX2X2)-(sumX2Y*sumXX2)/(sumXX*sumX2X2)-(sumXX2)*2);
-// 		c = [ Σ y / n ] – { b * [ Σ x / n ] } – { a * [ Σ x 2 / n ] }
-		long c = ((sumY/arr.length)-(b*(sumX/arr.length)-(a*(sumX2/arr.length))));
-		System.out.println("y = " + a + "x^2 + " + b + "x + " + c);
-		return sumX;
+// 	public static long checkQuadratic(long[] arr){
+// 		//find sums and it's powers
+// 		long sumX = 0;
+// 		for (int i = 1; i <= arr.length; i++){
+// 			sumX += i;
+// 		}
+// 		System.out.println(sumX);
+// 		long sumY = 0;
+// 		for (int i = 1; i <= arr.length; i++){
+// 			sumY += arr[i-1];
+// 		}
+// 		System.out.println(sumY);
+// 		long sumX2 = 0;
+// 		for (int i = 1; i <= arr.length; i++){
+// 			sumX2 += Math.pow(i,2);
+// 		}
+// 		System.out.println(sumX2);
+// 		long sumX3 = 0;
+// 		for (int i = 1; i <= arr.length; i++){
+// 			sumX3 += Math.pow(i,3);
+// 		}
+// 		System.out.println(sumX3);
+// 		long sumX4 = 0;
+// 		for (int i = 1; i <= arr.length; i++){
+// 			sumX4 += Math.pow(i,4);
+// 		}
+// 		System.out.println(sumX4);
+// 		long sumXY = 0;
+// 		for (int i = 1; i < arr.length; i++){
+// 			sumXY += i*arr[i-1];
+// 		}
+// 		System.out.println(sumXY);
+// 		long sumX2Y = 0;
+// 		for (int i = 1; i < arr.length; i++){
+// 			sumX2Y += i*i*arr[i-1];
+// 		}
+// 		System.out.println(sumX2Y);
+// //		Σ x x = [ Σ x 2 ] – [ ( Σ x )2 / n ] 
+// 		long sumXX = sumX2 - ((sumX*2)/arr.length);
+// 		//Σ x y = [ Σ x y ] – [ ( Σ x * Σ y ) / n ] 
+// 		sumXY = sumXY - ((sumX*sumY)/arr.length);
+// // 		Σ x x2 = [ Σ x 3 ] – [ ( Σ x 2 * Σ x ) / n ] 
+// 		long sumXX2 = sumX3 - ((sumX2*sumX)/arr.length);
+// // 		Σ x2 y = [ Σ x 2 y] – [ ( Σ x 2 * Σ y ) / n ] 
+// 		sumX2Y = sumX2Y - ((sumX2*sumY)/arr.length);
+// // 		Σ x2 x2 = [ Σ x 4 ] – [ ( Σ x 2 )2 / n ]
+// 		long sumX2X2 = sumX4 - ((sumX2*2)/arr.length);
+
+// 		//write equation
+// 		//a = { [ Σ x2 y * Σ xx ] – [Σ xy * Σ xx2 ] } / { [ Σ xx * Σ x2x 2] – [Σ xx2 ]2 }
+// 		long a = ((sumX2Y*sumXX) - (sumXY*sumXX2)) / ((sumXX*sumX2X2)-(sumXX2)*2);
+// // 		b = { [ Σ xy * Σ x2x2 ] – [Σ x2y * Σ xx2 ] } / { [ Σ xx * Σ x2x 2] – [Σ xx2 ]2 }
+// 		long b =  ((sumXY*sumX2X2)-(sumX2Y*sumXX2)/(sumXX*sumX2X2)-(sumXX2)*2);
+// // 		c = [ Σ y / n ] – { b * [ Σ x / n ] } – { a * [ Σ x 2 / n ] }
+// 		long c = ((sumY/arr.length)-(b*(sumX/arr.length)-(a*(sumX2/arr.length))));
+// 		System.out.println("y = " + a + "x^2 + " + b + "x + " + c);
+// 		return sumX;
 	}
 
 	/* The equation used in quadratic regression is as follows: 
@@ -246,4 +246,4 @@ n = Number of Values/Elements
 Σ x x2 = [ Σ x 3 ] – [ ( Σ x 2 * Σ x ) / n ] 
 Σ x2 y = [ Σ x 2 y] – [ ( Σ x 2 * Σ y ) / n ] 
 Σ x2 x2 = [ Σ x 4 ] – [ ( Σ x 2 )2 / n ]*/
-}
+
