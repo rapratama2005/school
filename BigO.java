@@ -3,8 +3,8 @@ public class BigO {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		int upToIndex = 30;
-		int repeat = 100000;
+		int upToIndex = 10;
+		int repeat = 10;
 		int randomMin = 0;
 		int randomMax = 1000;
 		Sorts s = new Sorts();
@@ -68,6 +68,10 @@ public class BigO {
 		for (int i = 0; i < upToIndex; i++) {
 			System.out.printf("%13d | %5d | %5d | %5d\n", i, bestCase[i], worstCase[i], randomCase[i]);
 		}
+
+		// System.out.println(checkBigO(bestCase));
+		// System.out.println(checkBigO(worstCase));
+		// System.out.println(checkBigO(randomCase));
 		
 		// System.out.println(checkConstant(bestCase));
 		// System.out.println(checkConstant(worstCase));
@@ -116,27 +120,43 @@ public class BigO {
 	public static int randomInt(int min, int max){//picks random int
 	      return (int) (Math.random()*(max-min+1))+min;
 	  }
-	
+	/*
 	public static String checkBigO(long[] arr) {
 		int[] n = {10, 100, 1000, 10000};
 		long[] o1 = {100, 100,100, 100};
-		long[] o2N = {330, 660, 1000, 1330};
+		long[] oLog2N = {330, 660, 1000, 1330};
 		long[] oN = {100, 1000, 10000, 100000};
-		long[] nlog2n = {330, 6600, 100000, 1330000};
-		long[] n2 = {1000, 100000, 10000000, 1000000000};
-		
+		long[] onlog2n = {330, 6600, 100000, 1330000};
+		long[] on2 = {1000, 100000, 10000000, 1000000000};
+		String[] bigOs = {"O(1)","O(log2N)","O(N)","O(Nlog2N)","O(N2)"};
+		double[] devs = {avgDev(arr, o1, n),avgDev(arr, oLog2N, n),avgDev(arr, oN, n),avgDev(arr, onlog2n, n),avgDev(arr, on2, n)};
+		int index = 0;
+		double max = devs[0];
+		for (int i = 0; i < devs.length; i++){
+			if (devs[i]>max){
+				max = devs[i];
+				index++;
+			}
+		}
+		return bigOs[index];
 	}
 	
-	public static double avgDev(long[] arr, long[] bigO, int[] n) {
-		totalDev = 0;
+	public static long avgDev(long[] arr, long[] bigO, int[] n) {
+		long totalDev = 0;
+		int j=0;
 		for (int i: n) {
+			System.out.println(totalDev);
 			try {
-				totalDev += 
+				totalDev += Math.abs(arr[i]-bigO[i]);
+				System.out.println(totalDev);
+				j++;
 			} catch (Exception e) {
 				
 			}
 		}
-	}
+		System.out.println(totalDev/j);
+		return totalDev/j;
+	}*/
 
 // 	public static long checkConstant(long[] arr) {
 // 		long avgVal = 0;
