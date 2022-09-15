@@ -76,6 +76,10 @@ public class BigO {
 		System.out.println(checkLinear(bestCase));
 		System.out.println(checkLinear(worstCase));
 		System.out.println(checkLinear(randomCase));
+
+		System.out.println(checkQuadratic(bestCase));
+		System.out.println(checkQuadratic(worstCase));
+		System.out.println(checkQuadratic(randomCase));
 		
 		//equations
 		
@@ -127,7 +131,7 @@ public class BigO {
 		return avgDev/arr.length;
 	}
 
-	public static long checkLinear(long[] arr){
+	public static double checkLinear(long[] arr){
 		//find avg rate of change
 		long avgROT = 0;
 		long avgX = 0;
@@ -146,10 +150,12 @@ public class BigO {
 		long avgDev = 0;
 		for (int i = 0; i < arr.length; i++) {
 			long projected = (avgROT*arr[i])+b;
-			avgDev = (avgDev + Math.abs(projected-arr[i]))/(i+1);
+			avgDev = Math.abs((arr[i]-projected)/projected);
+			//avgDev = (avgDev + Math.abs(projected-arr[i]))/(i+1);
 		}
+		double r2 = (double) avgDev / arr.length;
 
-		return avgDev;
+		return r2*r2;
 	}
 
 	public static long checkQuadratic(long[] arr){
@@ -158,42 +164,37 @@ public class BigO {
 		for (int i = 1; i <= arr.length; i++){
 			sumX += i;
 		}
+		System.out.println(sumX);
 		long sumY = 0;
-		for (long i: arr){
-			sumY += i;
+		for (int i = 1; i <= arr.length; i++){
+			sumY += arr[i-1];
 		}
+		System.out.println(sumY);
 		long sumX2 = 0;
 		for (int i = 1; i <= arr.length; i++){
 			sumX2 += Math.pow(i,2);
 		}
-		long sumY2 = 0;
-		for (long i: arr){
-			sumY2 += Math.pow(i,2);
-		}
+		System.out.println(sumX2);
 		long sumX3 = 0;
 		for (int i = 1; i <= arr.length; i++){
 			sumX3 += Math.pow(i,3);
 		}
-		long sumY3 = 0;
-		for (long i: arr){
-			sumY3 += Math.pow(i,3);
-		}
+		System.out.println(sumX3);
 		long sumX4 = 0;
 		for (int i = 1; i <= arr.length; i++){
 			sumX4 += Math.pow(i,4);
 		}
-		long sumY4 = 0;
-		for (long i: arr){
-			sumY4 += Math.pow(i,4);
-		}
+		System.out.println(sumX4);
 		long sumXY = 0;
 		for (int i = 1; i < arr.length; i++){
 			sumXY += i*arr[i-1];
 		}
+		System.out.println(sumXY);
 		long sumX2Y = 0;
 		for (int i = 1; i < arr.length; i++){
 			sumX2Y += i*i*arr[i-1];
 		}
+		System.out.println(sumX2Y);
 //		Σ x x = [ Σ x 2 ] – [ ( Σ x )2 / n ] 
 		long sumXX = sumX2 - ((sumX*2)/arr.length);
 		//Σ x y = [ Σ x y ] – [ ( Σ x * Σ y ) / n ] 
@@ -211,9 +212,11 @@ public class BigO {
 // 		b = { [ Σ xy * Σ x2x2 ] – [Σ x2y * Σ xx2 ] } / { [ Σ xx * Σ x2x 2] – [Σ xx2 ]2 }
 		long b =  ((sumXY*sumX2X2)-(sumX2Y*sumXX2)/(sumXX*sumX2X2)-(sumXX2)*2);
 // 		c = [ Σ y / n ] – { b * [ Σ x / n ] } – { a * [ Σ x 2 / n ] }
-		long c = ((sumY/arr.length));
-		return;
+		long c = ((sumY/arr.length)-(b*(sumX/arr.length)-(a*(sumX2/arr.length))));
+		System.out.println("y = " + a + "x^2 + " + b + "x + " + c);
+		return sumX;
 	}
+
 	/* The equation used in quadratic regression is as follows: 
 
 y = ax2 + bx + c
