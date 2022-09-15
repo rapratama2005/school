@@ -116,6 +116,27 @@ public class BigO {
 	public static int randomInt(int min, int max){//picks random int
 	      return (int) (Math.random()*(max-min+1))+min;
 	  }
+	
+	public static String checkBigO(long[] arr) {
+		int[] n = {10, 100, 1000, 10000};
+		long[] o1 = {100, 100,100, 100};
+		long[] o2N = {330, 660, 1000, 1330};
+		long[] oN = {100, 1000, 10000, 100000};
+		long[] nlog2n = {330, 6600, 100000, 1330000};
+		long[] n2 = {1000, 100000, 10000000, 1000000000};
+		
+	}
+	
+	public static double avgDev(long[] arr, long[] bigO, int[] n) {
+		totalDev = 0;
+		for (int i: n) {
+			try {
+				totalDev += 
+			} catch (Exception e) {
+				
+			}
+		}
+	}
 
 // 	public static long checkConstant(long[] arr) {
 // 		long avgVal = 0;
@@ -215,7 +236,7 @@ public class BigO {
 // 		long c = ((sumY/arr.length)-(b*(sumX/arr.length)-(a*(sumX2/arr.length))));
 // 		System.out.println("y = " + a + "x^2 + " + b + "x + " + c);
 // 		return sumX;
-	}
+//	}
 
 	/* The equation used in quadratic regression is as follows: 
 
@@ -246,4 +267,4 @@ n = Number of Values/Elements
 Σ x x2 = [ Σ x 3 ] – [ ( Σ x 2 * Σ x ) / n ] 
 Σ x2 y = [ Σ x 2 y] – [ ( Σ x 2 * Σ y ) / n ] 
 Σ x2 x2 = [ Σ x 4 ] – [ ( Σ x 2 )2 / n ]*/
-
+}
