@@ -26,6 +26,13 @@ public class OddEvenSets
 		Set<Integer> set = new TreeSet<Integer>(intList);
 		Set<Integer> evens = new TreeSet<Integer>();
 		Set<Integer> odds = new TreeSet<Integer>();
+		for (int i: set) {
+			if (i%2==0) {
+				evens.add(i);
+			} else {
+				odds.add(i);
+			}
+		}
 	}
 
 	public String toString()
