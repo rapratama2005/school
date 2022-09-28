@@ -28,20 +28,33 @@ import static java.lang.System.*;
 public class Relatives
 {
 	private Map<String,Set<String>> map;
+	private String special;
 
 	public Relatives()
 	{
 		map = new TreeMap();
-
-
 	}
 
 	public void setPersonRelative(String line)
 	{
 		String[] personRelative = line.split(" ");
-		Set<String> i = new TreeSet<>(Arrays.asList(personRelative));
-		i.remove(0);
-		map.put(personRelative[0], i);
+		// String[] personRelative2 = new String[personRelative.length-1];
+		// for (int j = 1; j < personRelative.length; j++){
+		// 	personRelative2[j-1] = personRelative[j];
+		// }
+		// Set<String> i = new TreeSet<>(Arrays.asList(personRelative2));
+		// map.put(personRelative[0], i);
+		try {
+			if (map.containsKey(personRelative[0])){
+				map.get(personRelative[0]).add(personRelative[1]);
+			} else {
+				Set<String> i = new TreeSet<>();
+				i.add(personRelative[1]);
+				map.put(personRelative[0],i);
+			}
+		} catch (IndexOutOfBoundsException e){
+			special = personRelative[0];
+		}
 	}
 
 
@@ -59,14 +72,10 @@ public class Relatives
 	public String toString()
 	{
 		String output="";
-
-
-
-
-
-
-
-
+		for (Map.Entry<String,Set<String>> i: map.entrySet()){
+			output += i.getKey() + " is related to " + getRelatives(i.getKey()) + "\n";
+		}
+		//output += special + " is related to " + map.get(special);
 		return output;
 	}
 }
