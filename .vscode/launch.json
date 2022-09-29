@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch PartRunner",
+            "request": "launch",
+            "mainClass": "PartRunner",
+            "projectName": "school_bf13e0ea"
+        },
+        {
+            "type": "java",
             "name": "Launch RelativesRunner",
             "request": "launch",
             "mainClass": "RelativesRunner",
