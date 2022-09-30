@@ -6,6 +6,7 @@
     "configurations": [
         {
             "type": "java",
+<<<<<<< HEAD
             "name": "Launch MathSetRunner",
             "request": "launch",
             "mainClass": "MathSetRunner",
@@ -17,6 +18,19 @@
             "request": "launch",
             "mainClass": "OddEvenSetsRunner",
             "projectName": "school_285157ff"
+=======
+            "name": "Launch PartRunner",
+            "request": "launch",
+            "mainClass": "PartRunner",
+            "projectName": "school_bf13e0ea"
+        },
+        {
+            "type": "java",
+            "name": "Launch RelativesRunner",
+            "request": "launch",
+            "mainClass": "RelativesRunner",
+            "projectName": "school_bf13e0ea"
+>>>>>>> bd7e13f7b5d4a7d049806c85708b957f62e73f32
         },
         {
             "type": "java",
