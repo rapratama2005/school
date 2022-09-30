@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Launch MathSetRunner",
+            "request": "launch",
+            "mainClass": "MathSetRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch OddEvenSetsRunner",
+            "request": "launch",
+            "mainClass": "OddEvenSetsRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
             "name": "Launch BigO",
             "request": "launch",
             "mainClass": "BigO",
