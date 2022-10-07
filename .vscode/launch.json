@@ -6,7 +6,82 @@
     "configurations": [
         {
             "type": "java",
-<<<<<<< HEAD
+            "name": "Launch Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "Launch AcroRunner",
+            "request": "launch",
+            "mainClass": "AcroRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch Automobile",
+            "request": "launch",
+            "mainClass": "Automobile",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch BankAccountRunner",
+            "request": "launch",
+            "mainClass": "BankAccountRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch BigO",
+            "request": "launch",
+            "mainClass": "BigO",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch CaesarCipherMain",
+            "request": "launch",
+            "mainClass": "CaesarCipherMain",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch FractionMain",
+            "request": "launch",
+            "mainClass": "FractionMain",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch FractionMain2",
+            "request": "launch",
+            "mainClass": "FractionMain2",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch IteratorRemoverRunner",
+            "request": "launch",
+            "mainClass": "IteratorRemoverRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch IteratorReplacerRunner",
+            "request": "launch",
+            "mainClass": "IteratorReplacerRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch LongPalindromeRunner",
+            "request": "launch",
+            "mainClass": "LongPalindromeRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
             "name": "Launch MathSetRunner",
             "request": "launch",
             "mainClass": "MathSetRunner",
@@ -18,39 +93,75 @@
             "request": "launch",
             "mainClass": "OddEvenSetsRunner",
             "projectName": "school_285157ff"
-=======
+        },
+        {
+            "type": "java",
+            "name": "Launch PalinRunner",
+            "request": "launch",
+            "mainClass": "PalinRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
             "name": "Launch PartRunner",
             "request": "launch",
             "mainClass": "PartRunner",
-            "projectName": "school_bf13e0ea"
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch PartRunner2",
+            "request": "launch",
+            "mainClass": "PartRunner2",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch PersonMain",
+            "request": "launch",
+            "mainClass": "PersonMain",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch PlayingCardGame",
+            "request": "launch",
+            "mainClass": "PlayingCardGame",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch PointCircleMain",
+            "request": "launch",
+            "mainClass": "PointCircleMain",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch PointMain",
+            "request": "launch",
+            "mainClass": "PointMain",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch RectangleSquareRunner",
+            "request": "launch",
+            "mainClass": "RectangleSquareRunner",
+            "projectName": "school_285157ff"
         },
         {
             "type": "java",
             "name": "Launch RelativesRunner",
             "request": "launch",
             "mainClass": "RelativesRunner",
-            "projectName": "school_bf13e0ea"
->>>>>>> bd7e13f7b5d4a7d049806c85708b957f62e73f32
+            "projectName": "school_285157ff"
         },
         {
             "type": "java",
-            "name": "Launch BigO",
+            "name": "Launch RightTriangleMain",
             "request": "launch",
-            "mainClass": "BigO",
-            "projectName": "school_7d3bd774"
-        },
-        {
-            "type": "java",
-            "name": "Launch BigO",
-            "request": "launch",
-            "mainClass": "BigO",
-            "projectName": "school_bf13e0ea"
-        },
-        {
-            "type": "java",
-            "name": "Launch BigO",
-            "request": "launch",
-            "mainClass": "BigO",
+            "mainClass": "RightTriangleMain",
             "projectName": "school_285157ff"
         },
         {
@@ -58,13 +169,69 @@
             "name": "Launch SortArray",
             "request": "launch",
             "mainClass": "SortArray",
-            "projectName": "school_bf13e0ea"
+            "projectName": "school_285157ff"
         },
         {
             "type": "java",
-            "name": "Launch SortArray",
+            "name": "Launch Stars",
             "request": "launch",
-            "mainClass": "SortArray",
+            "mainClass": "Stars",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch StringSearchRunner",
+            "request": "launch",
+            "mainClass": "StringSearchRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch StudentWorkerRunner",
+            "request": "launch",
+            "mainClass": "StudentWorkerRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch StudentWorkerRunner2",
+            "request": "launch",
+            "mainClass": "StudentWorkerRunner2",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch Template",
+            "request": "launch",
+            "mainClass": "Template",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch ThreeDSolidRunner",
+            "request": "launch",
+            "mainClass": "ThreeDSolidRunner",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch ThreeDSolidRunner2",
+            "request": "launch",
+            "mainClass": "ThreeDSolidRunner2",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch ToyMain",
+            "request": "launch",
+            "mainClass": "ToyMain",
+            "projectName": "school_285157ff"
+        },
+        {
+            "type": "java",
+            "name": "Launch VenmoAccountMain",
+            "request": "launch",
+            "mainClass": "VenmoAccountMain",
             "projectName": "school_285157ff"
         },
         {
@@ -72,41 +239,28 @@
             "name": "Launch WordSearchRunner",
             "request": "launch",
             "mainClass": "WordSearchRunner",
-            "projectName": "school_bf13e0ea"
+            "projectName": "school_285157ff"
         },
         {
             "type": "java",
-            "name": "Launch LongPalindromeRunner",
+            "name": "Launch dumb",
             "request": "launch",
-            "mainClass": "LongPalindromeRunner",
-            "projectName": "school_bf13e0ea"
+            "mainClass": "dumb",
+            "projectName": "school_285157ff"
         },
         {
             "type": "java",
-            "name": "Launch PalinRunner",
+            "name": "Launch exceptionDemo3",
             "request": "launch",
-            "mainClass": "PalinRunner",
-            "projectName": "school_bf13e0ea"
+            "mainClass": "exceptionDemo3",
+            "projectName": "school_285157ff"
         },
         {
             "type": "java",
-            "name": "Launch StringSearchRunner",
+            "name": "Launch App",
             "request": "launch",
-            "mainClass": "StringSearchRunner",
-            "projectName": "school_bf13e0ea"
-        },
-        {
-            "type": "java",
-            "name": "Launch Stars",
-            "request": "launch",
-            "mainClass": "Stars",
-            "projectName": "school_7d3bd774"
-        },
-        {
-            "type": "java",
-            "name": "Launch Current File",
-            "request": "launch",
-            "mainClass": "${file}"
+            "mainClass": "test3.src.App",
+            "projectName": "school_285157ff"
         }
     ]
 }
